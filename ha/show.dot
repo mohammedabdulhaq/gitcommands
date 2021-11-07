@@ -1,0 +1,29 @@
+digraph "half_adder" {
+label="half_adder";
+rankdir="LR";
+remincross=true;
+n6 [ shape=octagon, label="a", color="black", fontcolor="black" ];
+n7 [ shape=octagon, label="b", color="black", fontcolor="black" ];
+n8 [ shape=octagon, label="co", color="black", fontcolor="black" ];
+n9 [ shape=octagon, label="sum", color="black", fontcolor="black" ];
+c13 [ shape=record, label="{{<p10> A|<p11> B}|$53\nsky130_fd_sc_hd__and2_0|{<p12> X}}" ];
+c14 [ shape=record, label="{{<p10> A|<p11> B}|$54\nsky130_fd_sc_hd__xor2_1|{<p12> X}}" ];
+x0 [shape=box, style=rounded, label="BUF"];
+x1 [shape=box, style=rounded, label="BUF"];
+x2 [shape=box, style=rounded, label="BUF"];
+x3 [shape=box, style=rounded, label="BUF"];
+n2 [ shape=point ];
+x0:e:e -> n2:w [color="black", label=""];
+n2:e -> c13:p10:w [color="black", label=""];
+n2:e -> c14:p10:w [color="black", label=""];
+n3 [ shape=point ];
+x1:e:e -> n3:w [color="black", label=""];
+n3:e -> c13:p11:w [color="black", label=""];
+n3:e -> c14:p11:w [color="black", label=""];
+c14:p12:e -> x2:w:w [color="black", label=""];
+c13:p12:e -> x3:w:w [color="black", label=""];
+n6:e -> x1:w:w [color="black", label=""];
+n7:e -> x0:w:w [color="black", label=""];
+x3:e:e -> n8:w [color="black", label=""];
+x2:e:e -> n9:w [color="black", label=""];
+}
